@@ -1,0 +1,59 @@
+* {
+    font-family: "Monserrat", sans-serif;
+}
+
+.header {
+    margin-top: 80px;
+    background-image: url("../../../../assets/Backgrounds/Bg_Footer.png");
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.imagenHeader {
+    width: 400px;
+}
+
+.header p {
+    text-align: left;
+    font-size: 45px;
+    width: 300px;
+}
+
+.home {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: rgb(243, 243, 243);
+}
+
+.imgWoloxer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+}
+
+.textImg {
+    position: absolute;
+    text-align: center;
+    font-size: 45px;
+}
+
+button {
+    padding: 9px 65px;
+    color: white;
+    border-color: #44c4ec;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    background-color: transparent;
+    font-size: 15px;
+}
+
+button:hover {
+    background-color: #44c4ec;
+    color: black;
+}
