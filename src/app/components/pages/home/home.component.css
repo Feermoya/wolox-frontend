@@ -49,6 +49,10 @@
     justify-content: center;
 }
 
+.twitterIcon {
+    width: 80px;
+}
+
 button {
     padding: 9px 65px;
     color: white;
