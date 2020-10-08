@@ -4,14 +4,20 @@
             <h1>Login</h1>
         </header>
         <section>
-            <form action="" class="login-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+            <form class="login-form" [formGroup]="form" (ngSubmit)="onSubmit()">
                 <div class="input-group">
                     <label for="username">Email</label>
-                    <input type="text" formControlName="email" placeholder="Email" name="email" id="email" [(ngModel)]="usuario.email" />
+                    <input type="text" formControlName="email" placeholder="Email" name="email" id="email" [class.is-invalid]="emailInvalid" />
+                    <small *ngIf="emailInvalid" class="text-danger">
+            Ingrese email valido
+          </small>
                 </div>
                 <div class="input-group">
                     <label for="password">Password</label>
                     <input type="password" formControlName="password" placeholder="Password" name="password" id="password" />
+                    <small *ngIf="passwordInvalid" class="text-danger">
+            Ingrese un password
+          </small>
                     <label><input type="checkbox" name="" id="" />Mantenerse conectado</label
           >
         </div>

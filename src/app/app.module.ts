@@ -7,7 +7,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { LoginModule } from './auth/login/login.module';
-
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -21,7 +21,8 @@ import { LoginModule } from './auth/login/login.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LoginModule
+    LoginModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

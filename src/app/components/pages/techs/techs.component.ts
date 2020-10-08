@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TechsService } from '../../../services/techs/techs.service';
 
 @Component({
   selector: 'app-techs',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TechsComponent implements OnInit {
 
-  constructor() { }
+  techsAll: Array<any> = [];
+
+  constructor(private techsService: TechsService) { }
 
   ngOnInit(): void {
   }
+
+  // getAll() {
+  //   this.techsService.getAll().subscribe((techs) => {
+  //     this.techsAll = techs;
+  //     console.log(this.techsAll);
+  //   },
+  //     (error) => {
+  //       console.warn('error no hay categorias =>', error);
+  //     });
+  // }
 
 }
