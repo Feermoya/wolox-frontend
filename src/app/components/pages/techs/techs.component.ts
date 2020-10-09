@@ -13,16 +13,17 @@ export class TechsComponent implements OnInit {
   constructor(private techsService: TechsService) { }
 
   ngOnInit(): void {
+    this.getAll();
   }
 
-  // getAll() {
-  //   this.techsService.getAll().subscribe((techs) => {
-  //     this.techsAll = techs;
-  //     console.log(this.techsAll);
-  //   },
-  //     (error) => {
-  //       console.warn('error no hay categorias =>', error);
-  //     });
-  // }
+  getAll() {
+    this.techsService.getAll().subscribe((techs) => {
+      this.techsAll = techs;
+      console.log(this.techsAll);
+    },
+      (error) => {
+        console.warn('error no hay categorias =>', error);
+      });
+  }
 
 }

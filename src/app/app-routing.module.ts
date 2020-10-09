@@ -17,6 +17,7 @@ const routes: Routes = [
   {
     path: 'techs',
     loadChildren: './components/pages/techs/techs.module#TechsModule'
+
   },
   {
     path: '**',

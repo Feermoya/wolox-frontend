@@ -8,6 +8,7 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { LoginModule } from './auth/login/login.module';
 import { HttpClientModule } from '@angular/common/http';
+import { TechsModule } from './components/pages/techs/techs.module';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     LoginModule,
-    HttpClientModule
+    HttpClientModule,
+    TechsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

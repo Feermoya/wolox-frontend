@@ -1,7 +1,9 @@
+
 import { CommonModule } from '@angular/common';
 import { NgModule } from "@angular/core";
-import { TechsComponent } from '../../pages/techs/techs.component';
+
 import { TechsRoutingModule } from './techs-routing.module';
+import { TechsComponent } from './techs.component';
 
 
 
