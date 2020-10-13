@@ -11,12 +11,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { TechsModule } from './components/pages/techs/techs.module';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
     HomeComponent,
     NavbarComponent,
+
 
   ],
   imports: [

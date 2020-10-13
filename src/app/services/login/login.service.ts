@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LoginService extends CommonService<User> {
 
-  url = 'http://private-8e8921-woloxfrontendinverview.apiary-mock.com/login';
+  url = 'https://private-8e8921-woloxfrontendinverview.apiary-mock.com/login';
   constructor(http: HttpClient) {
     super(http);
   }

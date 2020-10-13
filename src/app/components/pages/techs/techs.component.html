@@ -1,1 +1,34 @@
-<p>techs works!</p>
+<body>
+    <div class="container">
+        <div class="field-input">
+            <input class="searchTerm" autofocus type="search" placeholder="Search...." name="searchTechs" [(ngModel)]="searchTechs" />
+
+            <select name="sortDirection" [(ngModel)]="sortDirection">
+        <option value="asc">Descendente</option>
+        <option value="desc">Ascendente</option>
+      </select>
+        </div>
+    </div>
+
+    <section>
+        <div class="column card-style" *ngFor="
+        let data of techsAll
+          | search: searchTechs
+          | orderName: ['tech', sortDirection]
+      ">
+            <figure class="img">
+                <img src="{{ data.logo }}" alt="image" />
+            </figure>
+            <div class="card-text">
+                <h1>{{ data.tech }}</h1>
+                <div class="ellipsis">
+                    <p>Autor: {{ data.author }}</p>
+                    <p>Lenguaje {{ data.language }}</p>
+                    <p>{{ data.license }}</p>
+                    <p>{{ data.type }}</p>
+                    <p>{{ data.year }}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>

@@ -26,6 +26,7 @@ header {
     height: 25px;
     cursor: pointer;
     margin-right: auto;
+    outline: none;
 }
 
 .navbar {
@@ -53,6 +54,7 @@ button {
     cursor: pointer;
     transition: all 0.3s ease 0s;
     background-color: white;
+    outline: none;
 }
 
 button:hover {

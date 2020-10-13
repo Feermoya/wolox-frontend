@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { TechsService } from '../../../services/techs/techs.service';
+import { Tech } from '../../../class/tech.interface';
+
 
 @Component({
   selector: 'app-techs',
@@ -8,22 +11,36 @@ import { TechsService } from '../../../services/techs/techs.service';
 })
 export class TechsComponent implements OnInit {
 
-  techsAll: Array<any> = [];
+  techsAll: Array<Tech> = [];
 
-  constructor(private techsService: TechsService) { }
+  searchTechs: any = '';
+
+  sortDirection = 'asc';
+
+  constructor(private techsService: TechsService, private router: Router) { }
 
   ngOnInit(): void {
     this.getAll();
   }
 
-  getAll() {
+  getAll(): void {
     this.techsService.getAll().subscribe((techs) => {
       this.techsAll = techs;
+
       console.log(this.techsAll);
     },
       (error) => {
-        console.warn('error no hay categorias =>', error);
+        console.warn('error no hay tecnologias =>', error);
       });
   }
+
+  onSortDirection(): void {
+    if (this.sortDirection === 'desc') {
+      this.sortDirection = 'asc';
+    } else {
+      this.sortDirection = 'desc';
+    }
+  }
+
 
 }
