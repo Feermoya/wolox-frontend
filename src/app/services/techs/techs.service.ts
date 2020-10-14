@@ -6,7 +6,7 @@ import { Tech } from '../../class/tech.interface';
 @Injectable({
   providedIn: 'root'
 })
-export class TechsService extends CommonService<any> {
+export class TechsService extends CommonService<Tech> {
 
   url = 'https://private-8e8921-woloxfrontendinverview.apiary-mock.com/techs';
   constructor(http: HttpClient) {

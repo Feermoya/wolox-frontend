@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { User } from '../../class/user';
 import { LoginService } from '../../services/login/login.service';
 
@@ -13,15 +14,14 @@ export class LoginComponent implements OnInit {
 
   form: FormGroup;
   user: User;
-  constructor(private fb: FormBuilder, private loginService: LoginService) { }
+  remember = false;
+  constructor(private fb: FormBuilder, private loginService: LoginService, private router: Router) { }
 
   ngOnInit(): void {
-    // this.usuario = new UsuarioModel();
-    // this.usuario.email = 'user@wolox.com.ar';
     this.createForm();
   }
 
-  onSubmit() {
+  onSubmit(): void {
     console.log(this.form);
 
     if (this.form.invalid) {
@@ -31,16 +31,36 @@ export class LoginComponent implements OnInit {
 
     } else {
       this.loginService.post(this.form.value).subscribe((data) => {
-        console.log("else post");
-        console.log(data);
-      });
+        console.log("post");
+        const token = data;
+        if (localStorage.getItem('remember') === '1') {
+
+        } else {
+          localStorage.setItem('token', null);
+        }
+        if (this.remember) {
+          console.log('1');
+          this.loginService.saveToken(token);
+          this.router.navigate(['/techs']);
+          localStorage.setItem('remember', '1')
+        } else {
+          console.log('2');
+          localStorage.setItem('remember', '2');
+          this.loginService.saveToken(token);
+          this.router.navigate(['/techs']);
+        }
+      }, (error) => {
+        console.warn(error);
+      }
+      );
     }
   }
 
   createForm(): void {
     this.form = this.fb.group({
       email: ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
-      password: ['', Validators.required]
+      password: ['', Validators.required],
+      remember: false
     });
   }
 

@@ -4,17 +4,28 @@
     <nav>
         <ul class="navbar">
             <li>
-                <a routerLink="home"><strong>Inicio</strong> </a>
+                <a id="homeBoton" routerLink="home"><strong>Inicio</strong> </a>
             </li>
             <li>
-                <a href="#benefits"> <strong>Beneficios</strong> </a>
+                <a (click)="scroll()" id="linkbenefits">
+                    <strong>Beneficios</strong>
+                </a>
             </li>
             <li>
                 <a routerLink="techs"> <strong>Tecnologias</strong> </a>
             </li>
-            <li class="cta">
-                <button routerLink="login"><strong>Login</strong></button>
+            <li class="cta" *ngIf="loginService.verify; else showLogin">
+                <button (click)="onLogout()">
+          <strong>Log Out</strong>
+        </button>
             </li>
+            <ng-template #showLogin>
+                <li class="cta">
+                    <button routerLink="login">
+            <strong>Login</strong>
+          </button>
+                </li>
+            </ng-template>
         </ul>
     </nav>
 </header>

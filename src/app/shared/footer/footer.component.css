@@ -56,3 +56,7 @@ button:hover {
     color: black;
     border-color: white;
 }
+
+a {
+    text-decoration: none;
+}

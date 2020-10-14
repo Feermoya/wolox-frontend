@@ -9,6 +9,8 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { LoginModule } from './auth/login/login.module';
 import { HttpClientModule } from '@angular/common/http';
 import { TechsModule } from './components/pages/techs/techs.module';
+import { CheckLoginGuard } from './guards/check-login.guard';
+import { OpenGuard } from './guards/open.guard';
 
 
 
@@ -28,7 +30,7 @@ import { TechsModule } from './components/pages/techs/techs.module';
     HttpClientModule,
     TechsModule
   ],
-  providers: [],
+  providers: [CheckLoginGuard, OpenGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

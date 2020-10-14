@@ -111,6 +111,11 @@ button:hover {
     flex-wrap: wrap;
 }
 
+a {
+    text-decoration: none;
+    color: white;
+}
+
 
 /*
 p,
