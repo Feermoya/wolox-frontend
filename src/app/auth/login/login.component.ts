@@ -39,12 +39,10 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('token', null);
         }
         if (this.remember) {
-          console.log('1');
           this.loginService.saveToken(token);
           this.router.navigate(['/techs']);
           localStorage.setItem('remember', '1')
         } else {
-          console.log('2');
           localStorage.setItem('remember', '2');
           this.loginService.saveToken(token);
           this.router.navigate(['/techs']);

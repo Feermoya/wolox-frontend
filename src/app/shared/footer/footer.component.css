@@ -4,7 +4,6 @@
     padding: 0;
     justify-content: center;
     flex-wrap: wrap;
-    font-family: "Monserrat", sans-serif;
 }
 
 hr {
@@ -24,11 +23,14 @@ hr {
 
 .title {
     font-size: 25px;
+    font-family: "Fira Sans", sans-serif;
 }
 
 .footer p {
     line-height: 3em;
     font-size: 25px;
+    font-family: "Monserrat", sans-serif;
+    font-weight: 500;
 }
 
 .logoFooter {

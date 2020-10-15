@@ -1,4 +1,10 @@
-<body>
+<div class="overlay" *ngIf="!load">
+    <div class="spinner">
+        <img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" />
+    </div>
+</div>
+
+<body *ngIf="load">
     <div class="container">
         <div class="field-input">
             <input class="searchTerm" autofocus type="search" placeholder="Search...." name="searchTechs" [(ngModel)]="searchTechs" />

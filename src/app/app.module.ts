@@ -12,10 +12,6 @@ import { TechsModule } from './components/pages/techs/techs.module';
 import { CheckLoginGuard } from './guards/check-login.guard';
 import { OpenGuard } from './guards/open.guard';
 
-
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +26,7 @@ import { OpenGuard } from './guards/open.guard';
     AppRoutingModule,
     LoginModule,
     HttpClientModule,
-    TechsModule,
+    TechsModule
   ],
   providers: [CheckLoginGuard, OpenGuard],
   bootstrap: [AppComponent]

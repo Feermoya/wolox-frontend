@@ -14,9 +14,13 @@ export class TechsComponent implements OnInit {
 
   searchTechs: any = '';
   sortDirection = '';
+  load: boolean = false;
   constructor(public techsService: TechsService) { }
 
   ngOnInit() {
+    setTimeout(() => {
+      this.load = true;
+    }, 1000);
     this.getAll();
   }
 
