@@ -149,13 +149,26 @@ a {
     color: white;
 }
 
+@media (max-width: 665px) {
+    .imgWoloxer img {
+        width: 550px;
+    }
+    .imgWoloxer textImg {
+        width: 30px;
+    }
+}
 
-/*
-p,
-h3,
-button {
-    font-family: "Monserrat", sans-serif;
-    font-size: 25px;
-    font-weight: 800;
-    text-decoration: none;
-} */
+@media (max-width: 300px) {
+    .home {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        background-color: #e9f0fd;
+    }
+    .imgWoloxer img {
+        width: 200px;
+    }
+    .imgWoloxer textImg {
+        width: 20px;
+    }
+}

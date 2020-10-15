@@ -13,10 +13,9 @@ export class LoginService {
   userToken: any;
   verify = false;
   url = 'https://private-8e8921-woloxfrontendinverview.apiary-mock.com/login';
+
   constructor(private http: HttpClient, public router: Router) {
   }
-
-
 
   post(formData: User) {
     return this.http
@@ -28,7 +27,6 @@ export class LoginService {
   saveToken(idToken: any): void {
     this.userToken = idToken;
     localStorage.setItem('token', idToken.token);
-    console.log(idToken.token);
   }
 
   readToken() {
@@ -36,7 +34,6 @@ export class LoginService {
       this.verify = true;
       return localStorage.getItem('token');
     } else {
-      console.log('no hay token');
       this.userToken = '';
     }
     return this.userToken.token;
@@ -45,7 +42,6 @@ export class LoginService {
   logout() {
     this.verify = false;
     localStorage.clear();
-    console.log('Sesion cerrada');
     this.router.navigate(['/login']);
   }
 

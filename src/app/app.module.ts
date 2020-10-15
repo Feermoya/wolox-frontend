@@ -17,8 +17,7 @@ import { OpenGuard } from './guards/open.guard';
     AppComponent,
     FooterComponent,
     HomeComponent,
-    NavbarComponent,
-
+    NavbarComponent
 
   ],
   imports: [

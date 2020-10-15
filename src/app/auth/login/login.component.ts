@@ -31,7 +31,6 @@ export class LoginComponent implements OnInit {
 
     } else {
       this.loginService.post(this.form.value).subscribe((data) => {
-        console.log("post");
         const token = data;
         if (localStorage.getItem('remember') === '1') {
 
