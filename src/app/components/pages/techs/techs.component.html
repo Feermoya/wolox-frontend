@@ -4,20 +4,20 @@
             <input class="searchTerm" autofocus type="search" placeholder="Search...." name="searchTechs" [(ngModel)]="searchTechs" />
 
             <select name="sortDirection" [(ngModel)]="sortDirection">
-        <option value="asc">Descendente</option>
-        <option value="desc">Ascendente</option>
+        <option value="desc" active>Descendente</option>
+        <option value="asc">Ascendente</option>
       </select>
         </div>
     </div>
 
     <section>
-        <div class="column card-style" *ngFor="
+        <div class="column card-style animacion" *ngFor="
         let data of techsAll
           | search: searchTechs
           | orderName: ['tech', sortDirection]
       ">
-            <figure class="img">
-                <img src="{{ data.logo }}" alt="image" />
+            <figure>
+                <img class="img" src="{{ data.logo }}" alt="image" />
             </figure>
             <div class="card-text">
                 <h1>{{ data.tech }}</h1>
@@ -31,4 +31,5 @@
             </div>
         </div>
     </section>
+    <h2>Tecnologias Mostradas: {{ techsService.numberTechs }}</h2>
 </body>

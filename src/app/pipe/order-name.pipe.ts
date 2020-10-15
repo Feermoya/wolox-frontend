@@ -6,12 +6,12 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class OrderNamePipe implements PipeTransform {
 
 
-  transform(value: Array<string>, args: any[]): any {
-    const sortField = args[0];
-    const sortDirection = args[1];
+  transform(value: any[], arg: any): any[] {
+    const sortField = arg[0];
+    const sortDirection = arg[1];
     let multiply = 1;
 
-    if (sortDirection === 'desc') {
+    if (sortDirection === 'asc') {
       multiply = -1;
     }
 

@@ -1,19 +1,29 @@
 import { Injectable } from '@angular/core';
-import { CommonService } from '../common.service';
-import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
+import { User } from '../../class/user';
 
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService extends CommonService<any> {
+export class LoginService {
 
   userToken: any;
   verify = false;
   url = 'https://private-8e8921-woloxfrontendinverview.apiary-mock.com/login';
-  constructor(http: HttpClient, public router: Router) {
-    super(http);
+  constructor(private http: HttpClient, public router: Router) {
   }
+
+
+
+  post(formData: User) {
+    return this.http
+      .post(this.url, formData)
+      .pipe(catchError(this.getError));
+  }
+
 
   saveToken(idToken: any): void {
     this.userToken = idToken;
@@ -33,9 +43,21 @@ export class LoginService extends CommonService<any> {
   }
 
   logout() {
+    this.verify = false;
     localStorage.clear();
     console.log('Sesion cerrada');
     this.router.navigate(['/login']);
+  }
+
+  public getError(err) {
+    let errorMenssage: string;
+
+    if (err.error instanceof ErrorEvent) {
+      errorMenssage = `An error occurred: ${err.error.message}`;
+    } else {
+      errorMenssage = `Backend returned: ${err.error.message}`;
+    }
+    return throwError(errorMenssage);
   }
 
 

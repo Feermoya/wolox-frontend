@@ -14,6 +14,8 @@ import { OpenGuard } from './guards/open.guard';
 
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +30,7 @@ import { OpenGuard } from './guards/open.guard';
     AppRoutingModule,
     LoginModule,
     HttpClientModule,
-    TechsModule
+    TechsModule,
   ],
   providers: [CheckLoginGuard, OpenGuard],
   bootstrap: [AppComponent]

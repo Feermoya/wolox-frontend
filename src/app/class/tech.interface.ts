@@ -5,5 +5,5 @@ export interface Tech {
   logo: string;
   tech: string;
   type: string;
-  year: number;
+  year: string;
 }

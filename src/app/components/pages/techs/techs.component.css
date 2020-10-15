@@ -18,6 +18,7 @@ select {
     padding: 0.6rem 2rem 0.6rem 1rem;
     width: 12rem;
     transition: 0.5s;
+    outline: none;
 }
 
 .container .field-input input:focus {
@@ -28,13 +29,33 @@ select {
 /*Search */
 
 
-/*Select */
+/*Animate */
+
+.animacion {
+    /* animation: name time estado; */
+    animation: animationIn 0.8s;
+}
+
+@keyframes animationIn {
+    0% {
+        transform: translateY(-3000px);
+    }
+    60% {
+        transform: translateY(25px);
+    }
+    75% {
+        transform: translateY(-10px);
+    }
+    90% {
+        transform: translateY(5px);
+    }
+}
 
 
-/*Select */
+/*Animate */
 
 body {
-    font-family: Roboto, sans-serif;
+    font-family: "Monserrat", sans-serif;
     font-size: 15px;
     line-height: 1.5;
     color: dimgray;
@@ -45,6 +66,10 @@ section {
     flex-flow: row wrap;
 }
 
+h2 {
+    text-align: center;
+}
+
 P {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -52,20 +77,22 @@ P {
 }
 
 H1 {
-    font-family: "IBM Plex Sans", sans-serif;
+    font-family: "Monserrat", sans-serif;
     font-weight: 100;
     text-transform: uppercase;
     font-size: 28px;
 }
 
 figure {
+    display: flex;
     margin: 0px;
+    justify-content: center;
+    align-items: center;
 }
 
 figure img {
-    width: 100%;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    height: 25%;
+    width: 160px;
 }
 
 figure img:hover {
